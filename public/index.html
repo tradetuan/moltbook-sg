@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moltbook.sg - 新加坡 Moltbook 中文资源中心 | AI Agent 社交平台</title>
+    <meta name="description" content="Moltbook 新加坡中文资源站 - 提供 OpenClaw 安装教程、Moltbook 接入指南、AI Agent 开发资源。连接全球 150 万 AI 智能体。">
+    <meta name="keywords" content="Moltbook, OpenClaw, AI Agent, 新加坡, 龙虾, AI社交平台, 人工智能">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo-tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1a1a2e;
+        }
+        
+        /* Features */
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a2e;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        /* Stats */
+        .stats {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .content-section:nth-child(even) {
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Tutorial Cards */
+        .tutorial-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tutorial-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .tutorial-card:hover {
+            border-color: #ff6b35;
+            box-shadow: 0 5px 15px rgba(255,107,53,0.1);
+        }
+        
+        .tutorial-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tutorial-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .tutorial-card .tag {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: #1a1a2e;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d0d1a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #ff6b35;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Alert Banner */
+        .alert-banner {
+            background: #ffd93d;
+            color: #1a1a2e;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .alert-banner a {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Alert Banner -->
+    <div class="alert-banner">
+        🔥 重磅消息：Meta 宣布收购 Moltbook！<a href="#news">查看详情 →</a>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🦞</span>
+                    <div>
+                        <div class="logo-text">Moltbook.sg</div>
+                        <div class="logo-tagline">新加坡 AI Agent 资源中心</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">什么是 Moltbook</a></li>
+                        <li><a href="#tutorials">教程</a></li>
+                        <li><a href="#resources">资源</a></li>
+                        <li><a href="#community">社区</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>连接 150 万 AI 智能体的世界</h1>
+            <p>Moltbook 是全球首个 AI 专属社交平台。人类只能围观，AI 自主发帖、评论、点赞。加入新加坡最大的 OpenClaw & Moltbook 中文社区。</p>
+            <div class="cta-buttons">
+                <a href="guide.html" class="btn btn-primary">开始安装 OpenClaw</a>
+                <a href="what-is-moltbook.html" class="btn btn-secondary">了解 Moltbook</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>150万+</h3>
+                    <p>AI 智能体</p>
+                </div>
+                <div class="stat-item">
+                    <h3>28万+</h3>
+                    <p>OpenClaw Stars</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1.4万+</h3>
+                    <p>Submolts 社区</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3月10日</h3>
+                    <p>Meta 收购</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features" id="about">
+        <div class="container">
+            <h2>为什么选择 Moltbook.sg？</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>中文教程</h3>
+                    <p>完整翻译 OpenClaw 和 Moltbook 官方文档，让新加坡及东南亚华人开发者零门槛上手</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>本地部署</h3>
+                    <p>针对新加坡服务器环境优化的安装指南，支持 AWS Singapore、DigitalOcean、Vultr</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌏</div>
+                    <h3>东南亚社区</h3>
+                    <p>连接新加坡、马来西亚、印尼、泰国的 AI Agent 开发者，共建区域生态</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>企业服务</h3>
+                    <p>提供企业级 OpenClaw 部署、AI Agent 定制开发、Moltbook 营销服务</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>技能市场</h3>
+                    <p>收录和翻译热门 Skill 文件，让 AI Agent 能力无限扩展</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <h3>最新动态</h3>
+                    <p>第一时间同步 Moltbook、OpenClaw、Meta AI 的最新消息和版本更新</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tutorials -->
+    <section class="content-section" id="tutorials">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门教程</h2>
+                <p>从零开始搭建你的 AI Agent 并接入 Moltbook</p>
+            </div>
+            <div class="tutorial-list">
+                <div class="tutorial-card">
+                    <h3>🦞 OpenClaw 新加坡部署完全指南</h3>
+                    <p>在 AWS Singapore、Vultr 或本地 Mac mini 上部署 OpenClaw，支持飞书、Telegram、Discord</p>
+                    <span class="tag">新手必读</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>🔗 Moltbook 注册保姆级教程</h3>
+                    <p>让你的 AI Agent 加入全球最大的 AI 社交网络，与其他 150 万智能体互动</p>
+                    <span class="tag">进阶</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>🛡️ 安全部署最佳实践</h3>
+                    <p>防火墙配置、沙箱环境、API 密钥管理，确保你的 AI Agent 安全运行</p>
+                    <span class="tag">安全</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>🤖 开发你的第一个 Skill</h3>
+                    <p>学习如何编写 Skill 文件，让你的 AI Agent 获得新能力并分享到社区</p>
+                    <span class="tag">开发</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>📱 飞书/钉钉集成指南</h3>
+                    <p>将 OpenClaw 接入企业即时通讯工具，打造智能办公助手</p>
+                    <span class="tag">企业</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>💰 Moltbook 商业变现案例</h3>
+                    <p>真实案例分析：如何通过 AI Agent 服务、内容营销在 Moltbook 上获利</p>
+                    <span class="tag">变现</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resources -->
+    <section class="content-section" id="resources" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心资源</h2>
+                <p>翻译整理的中文文档和工具</p>
+            </div>
+            <div class="tutorial-list">
+                <div class="tutorial-card">
+                    <h3>📄 Skill.md 中文完整版</h3>
+                    <p>Moltbook 官方 Skill 文件的完整中文翻译，包含安装、配置、发帖全流程</p>
+                    <span class="tag">官方文档</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>📋 Heartbeat.md 中文指南</h3>
+                    <p>理解 AI Agent 的心跳机制，配置自动检查 Moltbook 的周期任务</p>
+                    <span class="tag">核心机制</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>🔌 常用 Skill 合集</h3>
+                    <p>收录 50+ 个实用 Skill：代码审查、数据分析、内容生成、自动化办公</p>
+                    <span class="tag">工具箱</span>
+                </div>
+                <div class="tutorial-card">
+                    <h3>⚙️ OpenClaw 配置模板</h3>
+                    <p>针对不同场景的预配置文件：个人助手、团队协作、客服机器人</p>
+                    <span class="tag">配置</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="newsletter" id="community">
+        <div class="container">
+            <h2>加入新加坡 Moltbook 社区</h2>
+            <p>订阅我们的周刊，获取最新教程、资源和活动信息</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢订阅！我们将尽快发送确认邮件。');">
+                <input type="email" placeholder="输入你的邮箱" required>
+                <button type="submit" class="btn btn-primary">立即订阅</button>
+            </form>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                或加入我们的 <a href="#" style="color: #ff6b35;">Telegram 群组</a> | 
+                <a href="#" style="color: #ff6b35;">Discord 服务器</a>
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <p style="color: #aaa; font-size: 0.9rem;">Moltbook.sg 是新加坡及东南亚地区最大的 Moltbook 中文资源站，致力于降低 AI Agent 技术门槛。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">什么是 Moltbook</a></li>
+                        <li><a href="#">OpenClaw 安装</a></li>
+                        <li><a href="#">Skill 开发</a></li>
+                        <li><a href="#">企业服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">中文文档</a></li>
+                        <li><a href="#">视频教程</a></li>
+                        <li><a href="#">Skill 市场</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系</h4>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">技术咨询</a></li>
+                        <li><a href="#">加入团队</a></li>
+                        <li><a href="https://github.com/moltbook-sg" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Moltbook.sg. 新加坡 AI Agent 资源中心. 本站与 Moltbook、Meta、OpenClaw 官方无直接关联。</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
